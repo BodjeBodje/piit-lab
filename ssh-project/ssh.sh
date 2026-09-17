@@ -1,0 +1,7 @@
+echo "============server manager============"
+echo "1. Add a server"
+echo "2. list server"
+echo "3. Check server health"
+echo "4. ssh inside a server"
+echo "5. Exit"
+echo "  "
