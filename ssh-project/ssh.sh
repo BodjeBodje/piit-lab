@@ -11,7 +11,7 @@ while true; do
     echo "  "
 
     read -p "Make you choice: " choice
-
+ 
     case $choice in
         1)
             read -p "enter server ip: " ip
@@ -24,5 +24,25 @@ while true; do
                 echo "$ip"
             done
             ;;
+        3)
+            for ip in "${servers[@]}"; do
+                if ping -c 1 -w 2 $ip > /dev/null 2>&1; then
+                    echo "$ip is up"
+                else
+                    echo "$ip is down"
+                fi
+            done
+            ;;
+        4)
+            for ip in "${servers[@]}"; do
+                #read -p "enter ip you want ssh" ip
+                echo "$ip"
+                read -p "enter username you want ssh:  " user
+                if ssh "$user@$ip" "exit" > /dev/null 2>&1; then
+                    echo "SSH connection successful!!!!"
+                else
+                    echo "SSH connection failed "
+                fi
+            done
     esac 
 done
