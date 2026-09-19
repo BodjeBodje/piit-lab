@@ -44,5 +44,8 @@ while true; do
                     echo "SSH connection failed "
                 fi
             done
+            ;;
+        5)
+            exit 0
     esac 
 done
