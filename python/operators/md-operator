@@ -1,0 +1,11 @@
+2️⃣ Comparison Operators
+
+Used to compare values, returns True/False:
+
+Operator	Meaning	Example
+==	Equal	x == y
+!=	Not equal	x != y
+>	Greater than	x > y
+<	Less than	x < y
+>=	Greater/equal	x >= y
+<=	Less/equal	x <= y
