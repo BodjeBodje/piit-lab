@@ -7,6 +7,7 @@ while true; do
     echo "2. Withdraw"
     echo "3. Check Balance"
     echo "4. Exit"
+    echo "5.Statement"
     echo "----------------------------------------"
     read -p  "Choose an option: " choose
     case $choose in
@@ -20,8 +21,10 @@ while true; do
             read -p "Enter amount to withdraw: " withd
             if [[ $deposit -gt $withd ]]; then
                 deposit=$((deposit-withd))
+                deposit_withd=$deposit
+                echo "$deposit_withd"
                 echo "Withdrew $withd"
-                echo "New balance: $deposit"
+                #echo "New balance: $deposit"
             else
                 echo "Insufficient funds!!"
             fi
@@ -32,6 +35,12 @@ while true; do
         4)
             echo "Goodbye!"
             exit 0 
+            ;;
+        5)
+            echo "-----Account Statement-------"
+            echo "Total Deposit: $amount"
+            echo "Total Withdraw: $withd"
+            echo "Current Amount: $deposit_withd"
             ;;
         *)
             echo "Invalide option!!"
